@@ -206,8 +206,8 @@ and we can start the integration from our reference energy $E_0$, yielding
   \frac{4\pi}{c} \int_{E_0}^\infty E J_0 \qty(\frac{E}{E_0})^{-\Gamma} \!\!\!\! \diff{E} =
   \frac{4\pi}{c} \; \frac{J_0 E_0^2}{(\Gamma - 2)}.
 \end{align}
-If we plug in the numbers from or toy parametrization, this turns out to be
-$u_\text{CR} \approx 1~\text{eV~cm}^3$, which was troubling for the early studies
+If we plug in the numbers from our toy parametrization, this turns out to be
+$u_\text{CR} \approx 1~\text{eV~cm}^{-3}$, which was troubling for the early studies
 of cosmic rays as, is assumed to permeate the entire Galaxy, or even the
 intergalactic space, would imply formidable energies. We shall get back on this
 later.
@@ -250,7 +250,7 @@ we shall not elaborate further.
 \end{figure}
 
 The vast majority of the cosmic radiation is comprised of bare atomic nuclei,
-most notably protons. This is way, in many contexts, the composition of cosmic
+most notably protons. This is why, in many contexts, the composition of cosmic
 rays is referred as to the \emph{chemical} composition, and it has been precisely
 measured by space-born experiment over a relatively wide energy
 range. Measuring the composition for ultra-high-energy cosmic rays from the ground
@@ -897,7 +897,7 @@ Not only this provides a model for the index of refraction of the atmosphere at
 an arbitrary height, but it also allows to calculate the energy threshold
 for a particle with mass $m$ to emit \cherenkov~radiation at any given altitude $h$
 \begin{align}
-  E_c(h) = \frac{mc^2}{\sqrt{1 - 1 / n^2(h)}} \approx \frac{mc^2}{\sqrt{2 n(h)}} =
+  E_c(h) = \frac{mc^2}{\sqrt{1 - 1 / n^2(h)}} \approx \frac{mc^2}{\sqrt{2 (n(h) -1)}} =
   \frac{mc^2}{\sqrt{2 \alpha \density(h)}},
 \end{align}
 as well as the characteristic angle of the \cherenkov~cone in the ultra-relativistic
@@ -1018,7 +1018,7 @@ which is about $3$~GeV for $h \sim 20$~km.
 
 \section{Acceleration of cosmic rays}\label{sec:cr_acceleration}
 
-Since a (static) magnetic field does non do work on charged particles, some kind of
+Since a (static) magnetic field does not do work on charged particles, some kind of
 electric field is in general needed for the acceleration to occur. There are two
 fundamentally different types of cosmic-ray acceleration mechanisms that we can
 imagine: one where particles are accelerated in one shot, e.g., from a coherent
@@ -1208,7 +1208,7 @@ contributes
 \end{align*}
 which, in turn, yields
 \begin{align}\label{eq:fermi_average}
-  \left< \frac{\Delta E}{E} \right> = 2 \beta \ave{\mu} + \beta^2 =
+  \left< \frac{\Delta E}{E} \right> = 2 \beta \ave{\mu} + 2 \beta^2 =
   \frac{8}{3} \beta^2 \coloneqq \xi.
 \end{align}
 
@@ -1470,10 +1470,10 @@ of energy at each passage.
 Let us start analyzing the problem in the reference frame where the shock is at rest,
 as shown in figure~\ref{fig:shock_cartoon_front}. The system is uni-dimensional
 (i.e., the thermodynamic quantities are only function of $x$). The gas upstream
-is moving in the negative direction of the $x$ axis with a velocity $u_1$ that is
+is moving in the negative direction of the $x$ axis with a velocity $\velocity_1$ that is
 equal (in absolute value) to the velocity $\beta c$ of the shock front, while the gas
-downstream is moving with a velocity $u_2$---which we don't know, yet, but is presumably
-smaller than $u_1$. In this reference frame the system is \emph{stationary}, and
+downstream is moving with a velocity $\velocity_2$---which we don't know, yet, but is presumably
+smaller than $\velocity_1$. In this reference frame the system is \emph{stationary}, and
 the conservation laws for mass, energy and momentum~\eqref{eq:conservation_1d_stationary},
 that we have derived in appendix~\ref{chap:fluidodynamics}, read
 \begin{align*}
@@ -1732,7 +1732,7 @@ where $P$ is the pulsar period, and $\omega$ the associated angular frequency.
 If we now consider a circle with a radius of the same order of magnitude of the
 pulsar radius $R$, representing a possible particle trajectory in proximity of the
 pulsar surface, we can integrate the equation over the surface delimited by the
-loop. The right-hand side can be expressed as a line integral by virtue of the
+loop. The left-hand side can be expressed as a line integral by virtue of the
 Stokes theorem
 \begin{align*}
   \int_S (\curl{\vb{E}}) \cdot d\vb{S} = \oint \vb{E} \cdot d\vb{l} = 2\pi R \ave{E},
@@ -1882,10 +1882,10 @@ The rate of production per unit length of secondary particles is proportional to
 the number $n_p$ of primaries, the number density $n_\text{ISM}$ of the interstellar
 and the cross-section $\sigma_{P\rightarrow S}$ of the spallation process
 \begin{align*}
-  \dv{n_s}{\ell} = \sigma_{P\rightarrow S} n_\text{ISM} N_p.
+  \dv{n_s}{\ell} = \sigma_{P\rightarrow S} n_\text{ISM} n_p.
 \end{align*}
 This is more conveniently rewritten in terms of the grammage, which we have already
-encountered in section~\ref{eq:earth_atmosphere}, and which in this context
+encountered in section~\ref{sec:earth_atmosphere}, and which in this context
 reads\sidenote{Technically speaking, we should use the average mass $\ave{m}$ of an
 interstellar medium particle, but, for the simplicity we shall assume that the
 ISM is made of pure hydrogen.}
@@ -2003,7 +2003,6 @@ at the Alfv\'en speed, so that the complete magnetic field is given by
 Let us consider a charged particle traveling at a pitch-angle $\theta$ with respect
 to the direction of the regular magnetic field, and as usual we shall set
 $\mu = \cos\theta$. If there was no perturbation, we know that the particle
-shall set $\mu = \cos\theta$. If there was no perturbation, we know that the particle
 would describe an helix around the magnetic field (see appendix~\ref{chap:bmotion})
 that, modulo an arbitrary phase that we can set to zero, can be explicitly written as
 \begin{align*}
@@ -2031,7 +2030,7 @@ if they were static. Also, if you expected the $\cos$ to be applied to the $x$ c
 keep in mind that you can control that by changing the phase $\psi$.}
 \begin{align*}
   \begin{cases}
-    \delta B_{kx} = \abs{\delta B_k} \sin(kz + \psi)\\
+    \delta B_{kx} = - \abs{\delta B_k} \sin(kz + \psi)\\
     \delta B_{ky} = \abs{\delta B_k} \cos(kz + \psi),
   \end{cases}
 \end{align*}
@@ -2041,7 +2040,7 @@ and the equation of motion along the regular field reads
   \frac{q}{c} \left(\velocity_x \delta B_{ky} - \velocity_y \delta B_{kx}\right) =\\
   & = \frac{q}{c} \velocity_\perp \abs{\delta B_k}
   \left\{
-    \cos(\Omega_\gyrorad t) \cos(kz + \psi) -
+    \cos(\Omega_\gyrorad t) \cos(kz + \psi) +
     \sin(\Omega_\gyrorad t) \sin(kz + \psi)
   \right\}.
 \end{align*}
@@ -2055,7 +2054,7 @@ yielding
 \begin{align*}
   \dv{\mu}{t} & = \frac{q \sqrt{1 - \mu^2}}{m \gamma c} \abs{\delta B_k}
   \left\{
-    \cos(\Omega_\gyrorad t) \cos(kz + \psi) -
+    \cos(\Omega_\gyrorad t) \cos(kz + \psi) +
     \sin(\Omega_\gyrorad t) \sin(kz + \psi)
   \right\} =\\
   & = \frac{q \sqrt{1 - \mu^2}}{m \gamma c} \abs{\delta B_k}
@@ -2066,7 +2065,7 @@ $z = \velocity_\parallel t = \velocity\mu t$, and using the expression for the
 gyro-frequency, this can be also rewritten as
 \begin{align}\label{eq:pitch_angle_motion}
   \dv{\mu}{t} =
-  \sqrt{1 - \mu^2} \; \frac{\abs{\delta B_k}}{B_0}
+  \sqrt{1 - \mu^2} \; \frac{\abs{\delta B_k} \Omega_\gyrorad}{B_0}
   \cos \left[ (\Omega_\gyrorad - k\velocity\mu) t - \psi \right].
 \end{align}
 
@@ -2089,7 +2088,7 @@ average of $\Delta \mu$ over all the phases $\psi$ vanishes
 our attention to is the variance
 \begin{align*}
   \ave{\Delta \mu \Delta \mu}_\psi = &
-  (1 - \mu^2) \; \frac{\abs{\delta B_k}^2}{B_0^2}
+  (1 - \mu^2) \; \frac{\abs{\delta B_k}^2 {\Omega_\gyrorad}^2}{B_0^2}
   \left<
     \int_{\Delta t} \!\!\!\!\!
     \diff{t'} \cos \left[ (\Omega_\gyrorad - k\velocity\mu) t' - \psi \right]
@@ -2109,7 +2108,7 @@ the one identity we do care about is
 we can rearrange this into a more manageable form
 \begin{align*}
   \ave{\Delta \mu \Delta \mu}_\psi =
-  \frac{(1 - \mu^2)}{2} \; \frac{\abs{\delta B_k}^2}{B_0^2}
+  \frac{(1 - \mu^2)}{2} \; \frac{\abs{\delta B_k}^2 {\Omega_\gyrorad}^2}{B_0^2}
   \left<
   \int_{\Delta t} \!\!\!\!\!
   \diff{t'} \int_{\Delta t} \!\!\!\!\!
@@ -2135,8 +2134,8 @@ chance to restore the factor $P(k)$ that we have dropped a few equations ago in
 order not to overcrowd the notation more than absolutely necessary.}
 \begin{align}\label{eq:pitch_angle_variance}
   \frac{\ave{\Delta \mu \Delta \mu}_\psi}{\Delta t} =
-  \frac{\pi}{2} (1 - \mu^2) \; \frac{\abs{\delta B_k}^2}{B_0^2} P(k)
-  \; \delta(\Omega_\gyrorad - kc\mu).
+  \frac{\pi}{2} (1 - \mu^2) \; \frac{\abs{\delta B_k}^2 {\Omega_\gyrorad}^2}{B_0^2} P(k)
+  \; \delta(\Omega_\gyrorad - k\velocity\mu).
 \end{align}
 You might need a few more seconds in order to realize it, but this is nothing short
 of spectacular: equations~\eqref{eq:pitch_angle_mean} and~\eqref{eq:pitch_angle_variance}
